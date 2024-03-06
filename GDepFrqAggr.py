@@ -4,7 +4,7 @@ import json
 import csv
 import subprocess
 
-GS_TOKEN = os.environ['GS_TOKEN']
+GS_TOKEN = os.environ['MY_SECRET_KEY']
 
 # Hard coded date ranges
 # start_datetime = "2023-09-01T00:00:00.000Z"
