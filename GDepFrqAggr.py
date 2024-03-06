@@ -4,6 +4,8 @@ import json
 import csv
 import subprocess
 
+GS_TOKEN = os.environ['GS_TOKEN']
+
 # Hard coded date ranges
 # start_datetime = "2023-09-01T00:00:00.000Z"
 # end_datetime = "2023-09-30T23:59:59.000Z"
@@ -35,7 +37,7 @@ url = "https://api.gearset.com/public/reporting/deployment-frequency/aggregate?S
 payload = {}
 headers = {
     'accept': 'application/json',
-    'Authorization': 'token 0025ABDB81BB722B4795D82397FB24382799DF7E41A244C2241F013A73DCBA86399',
+    'Authorization': 'token $GS_TOKEN',
     'api-version': '1'
 }
 
