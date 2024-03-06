@@ -1,3 +1,4 @@
+import os
 import requests
 import urllib.parse
 import json
@@ -37,7 +38,7 @@ url = "https://api.gearset.com/public/reporting/deployment-frequency/aggregate?S
 payload = {}
 headers = {
     'accept': 'application/json',
-    'Authorization': 'token $GS_TOKEN',
+    'Authorization': f'token {GS_TOKEN}',
     'api-version': '1'
 }
 
