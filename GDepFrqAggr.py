@@ -53,8 +53,8 @@ GS_TOKEN = os.environ['MY_SECRET_KEY']
 # end_datetime = "2023-09-30T23:59:59.000Z"
 
 # Prompt the user to enter a datetime range in ISO 8601 format
-start_datetime = input("Enter the start datetime (ISO 8601 format, e.g., 2023-01-01T00:00:00Z): ")
-end_datetime = input("Enter the end datetime (ISO 8601 format, e.g., 2023-12-31T23:59:59Z): ")
+start_datetime = input("Enter the start datetime (ISO 8601 format, e.g., 2024-01-01T00:00:00Z): ")
+end_datetime = input("Enter the end datetime (ISO 8601 format, e.g., 2024-01-31T23:59:59Z): ")
 
 # Hard coded Interval and GroupBy option
 # uInterval = "Weekly"
