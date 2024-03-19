@@ -18,7 +18,6 @@ def get_user_input():
 def fetch_and_write_data(uStart, uEnd, uInterval, uGroupBy):
     # Perform the API request
     url = "https://api.gearset.com/public/reporting/deployment-frequency/aggregate?StartDate="+uStart+"&EndDate="+uEnd+"&Interval="+uInterval+"&GroupBy="+uGroupBy
-    print (url)
 
     payload = {}
     headers = {
@@ -59,9 +58,6 @@ def main():
 
     if num_of_args == 0:
         start_datetime, end_datetime, uInterval, uGroupBy = get_user_input()
-        #uStart = urllib.parse.quote(start_datetime)
-        #uEnd = urllib.parse.quote(end_datetime)
-        # fetch_and_write_data(uStart, uEnd, uInterval, uGroupBy)
         fetch_and_write_data(start_datetime,end_datetime, uInterval, uGroupBy)
         # Open the CSV file in Excel
         subprocess.Popen(['C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE', 'output.csv'])
