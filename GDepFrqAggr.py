@@ -1,12 +1,11 @@
 import os
 import sys
 import requests
-# import urllib.parse
 import json
 import csv
 import subprocess
 
-GS_TOKEN = os.environ['MY_SECRET_KEY']
+GS_TOKEN = os.environ['GS_TOKEN']
 
 def get_user_input():
     start_datetime = input("Enter the start datetime (ISO 8601 format, e.g., 2024-01-01T00:00:00Z): ")
