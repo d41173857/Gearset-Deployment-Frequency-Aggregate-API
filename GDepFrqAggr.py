@@ -8,6 +8,13 @@ import subprocess
 
 GS_TOKEN = os.environ['MY_SECRET_KEY']
 
+def get_user_input():
+    start_datetime = input("Enter the start datetime (ISO 8601 format, e.g., 2024-01-01T00:00:00Z): ")
+    end_datetime = input("Enter the end datetime (ISO 8601 format, e.g., 2024-01-31T23:59:59Z): ")
+    uInterval = input("Enter the Interval option (Daily, Weekly, Monthly): ")
+    uGroupBy = input("Enter the GroupBy option (TotalDeploymentCount, Status, Owner, SourceUsername, TagetUsername, DeploymentType): ")
+    return start_datetime, end_datetime, uInterval, uGroupBy
+
 def fetch_and_write_data(uStart, uEnd, uInterval, uGroupBy):
     # Perform the API request
     url = "https://api.gearset.com/public/reporting/deployment-frequency/aggregate?StartDate="+uStart+"&EndDate="+uEnd+"&Interval="+uInterval+"&GroupBy="+uGroupBy
@@ -46,13 +53,6 @@ def fetch_and_write_data(uStart, uEnd, uInterval, uGroupBy):
         writer.writeheader()
         for date, value in zip(dates, values):
             writer.writerow({'Date': date, 'Counts': value})
-
-def get_user_input():
-    start_datetime = input("Enter the start datetime (ISO 8601 format, e.g., 2024-01-01T00:00:00Z): ")
-    end_datetime = input("Enter the end datetime (ISO 8601 format, e.g., 2024-01-31T23:59:59Z): ")
-    uInterval = input("Enter the Interval option (Daily, Weekly, Monthly): ")
-    uGroupBy = input("Enter the GroupBy option (TotalDeploymentCount, Status, Owner, SourceUsername, TagetUsername, DeploymentType): ")
-    return start_datetime, end_datetime, uInterval, uGroupBy
 
 def main():
     num_of_args = len(sys.argv) - 1
