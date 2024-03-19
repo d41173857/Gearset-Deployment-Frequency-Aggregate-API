@@ -1,7 +1,7 @@
 import os
 import sys
 import requests
-import urllib.parse
+# import urllib.parse
 import json
 import csv
 import subprocess
